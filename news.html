@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="agency, bootstrap 5, premium, marketing, business, digital, rtl, sass/scss/saas" />
+<meta name="description" content="HTML5 Template" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Title -->
+<title>Iconnect | News</title>
+
+<!-- favicon icon -->
+<link rel="shortcut icon" href="images/favicon.png" />
+
+<!-- inject css start -->
+
+<!--== bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+<!--== animate -->
+<link href="css/animate.css" rel="stylesheet" type="text/css" />
+
+<!--== fontawesome -->
+<link href="css/fontawesome-all.css" rel="stylesheet" type="text/css" />
+
+<!--== themify -->
+<link href="css/themify-icons.css" rel="stylesheet" type="text/css" />
+
+<!--== magnific-popup -->
+<link href="css/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+
+<!--== owl-carousel -->
+<link href="css/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
+
+<!--== spacing -->
+<link href="css/spacing.css" rel="stylesheet" type="text/css" />
+
+<!--== base -->
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+
+<!--== shortcodes -->
+<link href="css/shortcodes.css" rel="stylesheet" type="text/css" />
+
+<!--== default-theme -->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<!--== responsive -->
+<link href="css/responsive.css" rel="stylesheet" type="text/css" />
+
+<!-- inject css end -->
+<style>
+  html{
+scroll-behavior: smooth;
+  }
+body{font-family: 'Poppins';}
+ h3:hover:before{
+   background-color: #BA0100;
+   border-bottom:5px solid #BA0100 ;
+ }
+ h5{
+   position: relative;
+ }
+ h5::before{
+   content: "";
+   width: 10%;
+   margin-top: -20px;
+   border-radius: 10px;
+   position: absolute;
+   left: 45%;
+   border-bottom: 5px solid #BA0100; 
+ }
+#hexGrid {
+display: flex;
+flex-wrap: wrap;
+width: 47%;
+margin: 0 auto;
+/*overflow: hidden;*/
+list-style-type: none;
+}
+
+.hex {
+position: relative;
+visibility:hidden;
+outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+transition: all 0.5s;
+backface-visibility: hidden;
+will-change: transform;
+transition: all 0.5s;
+}
+.hex::after{
+content:'';
+display:block;
+padding-bottom: 86.602%;  /* =  100 / tan(60) * 1.5 */
+}
+.hexIn{
+position: absolute;
+width:96%;
+padding-bottom: 110.851%; /* =  width / sin(60) */
+margin: 2%;
+overflow: hidden;
+visibility: hidden;
+outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+-webkit-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+-ms-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+transition: all 0.5s;
+}
+.hexIn * {
+position: absolute;
+visibility: visible;
+outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hexLink {
+background-color: #101010;
+display:block;
+width: 100%;
+height: 100%;
+font-size: 12px;
+text-align: center;
+color: #BA0100;
+overflow: hidden;
+-webkit-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+-ms-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+}
+/*** HEX CONTENT **********************************************************************/
+.hex img {
+left: -100%;
+right: -100%;
+width: auto;
+height: 100%;
+margin: 0 auto;
+}
+
+.hex h5, .hex p {
+width: 100%;
+color: #000;
+padding: 5%;
+box-sizing:border-box;
+
+font-weight: 300;
+font-size: 9px;
+opacity: 1;
+}
+
+#demo1 {
+color: #fff;
+text-transform: capitalize;
+text-align: center;
+padding-top:50%;
+
+font-size: 12px;
+z-index: 1;
+}
+/*.hex h5:before, .hex h5:after {
+display: inline-block;
+margin: 0 0.5em;
+width: 0.25em;
+height: 0.03em;
+background: #BA0100;
+content: '';
+vertical-align: middle;
+transition: all 0.3s;
+text-align:center;
+}*/
+
+#demo2 {
+top: 50%;
+text-align: center;
+text-transform: uppercase;
+
+}
+
+.img {
+position: absolute;
+z-index: 9;
+opacity: 0;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background-position: center center;
+background-size: cover;
+overflow: hidden;
+-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/*.img:before, .img:after {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+content: '';
+opacity: 0;
+transition: opacity 0.5s;
+}
+.img:before {
+background: rgba(22, 103, 137, 0.3)
+}
+.img:after {
+background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5), transparent);
+}*/
+
+/*** HOVER EFFECT  **********************************************************************/
+.hexLink:hover .img, .hexLink:focus .img,
+.hexLink:hover .img, .hexLink:focus .img{
+opacity:1;
+transition: 0.8s;
+}
+.hexLink:hover h1, .hexLink:focus h1,
+.hexLink:hover p, .hexLink:focus p{
+opacity:0;
+transition: 0.8s;
+}
+.hexIn:hover .img:before,
+.hexIn:hover .img:after,
+.hexIn:hover .hexLink {
+opacity: 1;
+}
+@media (min-width:200px) and (max-width:1199px){
+.hex {
+width: 20%; /* = 100 / 5 */
+transform: scale(1);
+}
+.hex:hover{
+ transform: scale(2);
+ z-index: 1; 
+}
+}
+/*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
+@media (min-width:1201px) { /* <- 5-4  hexagons per row */
+#hexGrid{
+padding-bottom: 9.4%
+}
+#demo1 {
+color: #fff;
+text-transform: capitalize;
+text-align: center;
+top: 0%;
+font-weight: 600;
+
+font-size: 14px;
+z-index: 1;
+}
+.hex {
+width: 20%; /* = 100 / 5 */
+transform: scale(1);
+}
+.hex:hover{
+ transform: scale(2);
+ z-index: 1; 
+}
+.hex:nth-child(9n+6){ /* first hexagon of even rows */
+margin-left:10%;  /* = width of .hex / 2  to indent even rows */
+}
+}
+
+@media (max-width: 1200px) and (min-width:901px) { /* <- 4-3  hexagons per row */
+#hexGrid{
+padding-bottom: 5.5%;
+font-size: 13px;
+}
+.hex {
+width: 25%; /* = 100 / 4 */
+}
+.hex:nth-child(7n+5){ /* first hexagon of even rows */
+margin-left:12.5%;  /* = width of .hex / 2  to indent even rows */
+}
+}
+
+@media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
+#hexGrid{
+padding-bottom: 7.4%;
+font-size: 14px;
+}
+.hex {
+width: 33.333%; /* = 100 / 3 */
+}
+.hex:nth-child(5n+4){ /* first hexagon of even rows */
+margin-left:16.666%;  /* = width of .hex / 2  to indent even rows */
+}
+}
+
+@media (max-width: 600px) { /* <- 2-1  hexagons per row */
+#hexGrid{
+padding-bottom: 11.2%;
+font-size: 12px;
+}
+.hex {
+width: 50%; /* = 100 / 3 */
+}
+.hex:nth-child(3n+3){ /* first hexagon of even rows */
+margin-left:25%;  /* = width of .hex / 2  to indent even rows */
+}
+}
+
+@media (max-width: 400px) {
+#hexGrid {
+    font-size: 8px;
+}
+}
+.text-event>h2{
+
+color: #BA0100;
+font-size: 21px;
+}
+.text-event>span{
+color: #9e9e9e !important;
+}
+.text-event>p{
+color: #9e9e9e;
+font-size: 14px;
+}
+.form-control{
+padding: 30px !important;
+}
+.form-btn{
+padding: 10px 30px 25px 30px !important;
+}
+
+.flex-container {
+height: 35%;
+width: 92%;
+display: flex;
+justify-content: center;
+align-items: center;
+display: none;
+}
+/*.pop-up-button {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+width: 100%;
+font-size: 1.7rem;
+Text outline begin
+font-weight: 900;
+-webkit-text-stroke-width: 1.5px;
+-webkit-text-stroke-color: white; 
+color: transparent;
+
+text-transform: uppercase;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+transition: all 1.5s ease-out;
+}*/
+
+
+/* Pop-up buttons end */
+/* Pop-up second layer begin */
+
+.pop-up-overlay {
+position: fixed;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+z-index: 1000000000000000000;
+background: #BA0100;
+-webkit-transform: scale(0.6);
+ transform: scale(0.6);
+-webkit-transition: -webkit-transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+transition: transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+background-position: center;
+background-size: cover;
+visibility: hidden;
+color: visible;
+opacity: 1;
+}
+.pop-up-overlay:target {
+visibility: visible;
+opacity: 1;
+-webkit-transform: scale(1);
+transform: scale(1);	
+-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+transition: transform 0.4s, opacity 0.4s;
+}
+.pop-up {
+text-align: center;
+}
+.pop-up p {
+margin: 5% 10% 0 10%;
+}
+.pop-up a {
+position: absolute;
+color: white;
+text-decoration: none;
+font-size: 350%;
+
+right: 5%;
+}
+.event-img{
+padding: 3%;
+}
+/* Pop-up second layer end */
+ </style>  
+</head>
+
+
+  <body>
+    <div  class="insideText" style="font-family: 'Poppins';" >ICONNECT</div>
+    <div class="pattern-3">
+      <img class="img-fluid rotateme" src="images/pattern/03.png" alt="">
+    </div>
+    <header id="site-header" class="header">
+      <div id="header-wrap">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand logo" href="index.html">
+                  <img  data-aos="zoom-in" id="logo-img" class="img-fluid" src="images/new-logo.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav mx-auto position-relative">
+                    <!-- Home -->
+                    <li> <a class="nav-link active" href="index.html">Home</a>
+                   
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="about-us.html">Company</a>
+             
+                    </li>
+                    <li> <a class="nav-link" href="service-2.html">Services</a>
+                      
+                    </li>
+                    <li> <a class="nav-link" href="product.html">Products</a>
+                  
+                    </li>
+                    <li > <a class="nav-link" href="news.html">News & Events</a>
+                   
+                    </li>
+                    <li> <a class="nav-link " href="voice&sms.html">Voice & Sms</a>
+                  
+                    </li>
+                    <li> <a class="nav-link " href="contact-2.html">Contact</a>
+                  
+                    </li>
+                  </ul>
+                </div>
+                <div class="right-nav align-items-center d-flex justify-content-end">
+                  <!-- <a class="btn btn-white btn-sm" href="login.html">Login</a> -->
+                  <!-- <div class="search">
+                    <div class="search-content">
+                      <div class="search-button"> <i class="fas fa-search"></i>
+                      </div>
+                      <form id="search-form" class="search-form">
+                        <input type="search" class="search-input" placeholder="Search Here...">
+                      </form>
+                    </div> -->
+                  </div> <a href="#" class="ht-nav-toggle"><span></span></a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <nav id="ht-main-nav"> <a href="#" class="ht-nav-toggle active"><span></span></a>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <img class="img-fluid side-logo mb-3" src="images/new-logo.png" alt="">
+            <p class="mb-5" style="font-family: 'Poppins';">Iconnect teamed with seasoned professionals having more than thirty years’ experience, Chapter started from voice and SMS services, became the leading company for voice termination towards Africa and Europe region.</p>
+            <div class="form-info">
+              <h4 class="title">Contact info</h4>
+              <ul class="contact-info list-unstyled mt-4">
+                <li class="mb-4"><i class="flaticon-location"></i><span>Address:</span>
+                  <p>Level 3, Skylona Building, Sheikh Zayed Bin Sultan Rd, near GigaMall, Islamabad, 44000</p>
+                </li>
+                <li class="mb-4"><i class="flaticon-call"></i><span>Phone:</span><a href="tel:+912345678900">+339 529 753 27</a>
+                </li>
+                <li><i class="flaticon-email"></i><span>Email</span><a href="mailto:themeht23@gmail.com"> iconnectglobal@gmail.com</a>
+                </li>
+              </ul>
+            </div>
+            <div class="social-icons social-colored mt-5">
+              <ul class="list-inline" style="text-align: center;">
+                <!-- <li class="mb-2 social-facebook"><a href="#"><i class="fab fa-facebook-f"></i></a> -->
+                </li>
+                <!-- <li class="mb-2 social-twitter"><a href="#"><i class="fab fa-twitter"></i></a> -->
+                </li>
+                <li class="mb-2 social-linkedin"><a target="_blank" href="https://www.linkedin.com/company/iconnect-tel/mycompany/"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+                <!-- <li class="mb-2 social-gplus"><a href="#"><i class="fab fa-google-plus-g"></i></a> -->
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    <!--header end-->
+
+
+    <div class="flex-container">
+      <a  class="pop-up-button" href="#pop-up-one">
+        <p style="height: 0px;"></p>
+      </a>
+    </div>
+    <div id="pop-up-one" class="pop-up-overlay">
+      <div class="pop-up">
+        <a class="close" href="#">&times;</a>
+       <div class="container" style="max-width: 1500px;">
+       <div>
+         <img src="event-images/collage-event.jpg" alt="" style="width:54%">
+       </div>
+       </div>
+      </div>
+    </div>
+    <div id="pop-up-two" class="pop-up-overlay">
+      <div class="pop-up">
+        <a class="close" href="#">&times;</a>
+        <div class="container" style="max-width: 1500px;">
+          <div>
+            <img src="event-images/middle-east-2018-collage.jpg" alt="" style="width:54%">
+          </div>
+          </div>
+      </div>
+    </div>
+    <div id="pop-up-three" class="pop-up-overlay">
+      <div class="pop-up">
+        <a class="close" href="#">&times;</a>
+        <div class="container" style="max-width: 1500px;">
+          <div>
+            <img src="event-images/middle-2019-event.jpg" alt="" style="width:54%">
+          </div>
+          </div>
+      </div>
+    </div>
+    <div id="pop-up-four" class="pop-up-overlay">
+      <div class="pop-up">
+        <a class="close" href="#">&times;</a>
+        <div class="container" style="max-width: 1500px;">
+          <div>
+            <img src="event-images/erope-2018-event.jpg" alt="" style="width:32%">
+          </div>
+          </div>
+      </div>
+    </div>
+    <div id="pop-up-five" class="pop-up-overlay">
+      <div class="pop-up">
+        <a class="close" href="#">&times;</a>
+        <div class="container" style="max-width: 1500px;">
+          <div>
+            <img src="event-images/git-2020-event.jpg" alt="" style="width:54%">
+          </div>
+          </div>
+      </div>
+    </div>
+    <div id="pop-up-six" class="pop-up-overlay">
+      <div class="pop-up">
+        <a class="close" href="#">&times;</a>
+        <div class="container" style="max-width: 1500px;">
+          <div>
+            <img src="event-images/eurpo-2019-event.jpg" alt="" style="width:24%">
+          </div>
+          </div>
+      </div>
+    </div>
+    <div id="pop-up-seven" class="pop-up-overlay">
+      <div class="pop-up">
+        <a class="close" href="#">&times;</a>
+        <div class="container" style="max-width: 1500px;">
+          <div>
+            <img src="event-images/oman-event.jpg" alt="" style="width:50%">
+          </div>
+          </div>
+          </div>
+         </div>
+              <div class="grid">
+                
+                <div class="container">
+                  <div class="text-event" style="text-align: center; padding-top: 1%;">
+                    <h2>WHO SHOULD <span style="color: #9e9e9e;">ATTEND?</span></h2>
+                    <p>IConnect brings together the global ICT Infrastructure industry all in one place.So, if your company focuses on one of these areas or your objective
+                      is to expand your business in any of these verticals then you should book your passed today!
+                    </p>
+                  </div>
+                </div>
+                  <ul id="hexGrid">
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-on">
+                          <div class='img' style='background-image:url(event-images/GCCM\ Europe\ 2020-min.jpg);'></div>
+                          <h5 id="demo1">African 19</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-on">
+                          <div class='img' style='background-image:url(event-images/almaty-4.JPG);'></div>
+                          <h5 id="demo1">ITW 18</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-four">
+                          <div class='img' style='background-image:url(event-images/GCCM\ Europe\ 2018_1-min.JPG);'></div>
+                          <h5 id="demo1">Capacity Europe 18</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-five">
+                          <div class='img' style='background-image:url(event-images/Capacity_Middle_East_2019_2-min.jpg);'></div>
+                          <h5 id="demo1">WWC Madrid 18</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-on">
+                          <div class='img' style='background-image:url(event-images/GCCM\ Europe\ 2019-min.JPG);'></div>
+                          <h5 id="demo1">Capacity Europe 19</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-on">
+                              <div class='img'>
+                                  <img src="event-images/Capacity_Middle_East_2018-min.jpg">
+                              </div>
+                          <h5 id="demo1">Capacity Middle East 17</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-two">
+                          <div class='img' style='background-image: url(event-images/Capacity_Middle_East_2018_1-min.jpg);'></div>
+                          <h5 id="demo1">Capacity Middle East 18</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-three">
+                          <div class='img' style='background-image: url(event-images/Capacity_Middle_East_2019_1-min.jpg);'></div>
+                          <h5 id="demo1">Capacity Middle East 19</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-on">
+                          <div class='img' style='background-image: url(event-images/Capacity_Middle_East_2019_2-min.jpg);'></div>
+                          <h5 id="demo1">Capacity Europe 2020</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-on">
+                       <div class='img' style='background-image: url(event-images/GCCM\ Europe\ 2018-min.JPG);'></div>
+                          <h5 id="demo1">ACC 18</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-on">
+                          <div class='img' style='background-image: url(event-images/GCCM\ Europe\ 2019-min.JPG);'></div>
+                          <h5 id="demo1">ACC 19</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-one">
+                          <div class='img' style='background-image: url(event-images/almaty-1.JPG);'></div>
+                          <h5 id="demo1">GCCM Almaty</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-on">
+                          <div class='img' style='background-image: url(event-images/GCCM\ Europe\ 2018-min.JPG);'></div>
+                          <h5 id="demo1">GCCM Dubai 18</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                    
+                   <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-six">
+                          <div class='img' style='background-image:url(event-images/GCCM\ Europe\ 2019-min.JPG);'></div>
+                          <h5 id="demo1">GCCM Europe 19</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                      <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-seven">
+                          <div class='img' style='background-image: url(event-images/GCCM_Oman_2019-min.jpg);'></div>
+                          <h5 id="demo1">GCCM Oman 19</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                        <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-on">
+                              <div class='img' style='background-image: url(event-images/Gitex\ 2018-min.JPG);'></div>
+                          <h5 id="demo1">Gi-tex Technology Week 19</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                      <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-five">
+                          <div class='img' style='background-image: url(event-images/Gitex\ 2018_1-min.JPG);'></div>
+                          <h5 id="demo1">Gi-tex Technology Week 18</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                      <li class="hex">
+                      <div class="hexIn">
+                        <a class="pop-up-button hexLink"  href="#pop-up-fiv">
+                          <div class='img' style='background-image: url(event-images/Capacity_Middle_East_2018_3-min.jpg);'></div>
+                          <h5 id="demo1">Gi-tex Technology Week 20</h5>
+                          <p id="demo2"></p>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                    </div>
+<!--footer start-->
+<footer class="footer white-bg z-index-1 overflow-hidden bg-contain" data-bg-img="images/pattern/01.png">
+  <div class="round-p-animation"></div>
+	<div class="primary-footer">
+		<div class="container-fluid p-0" style="background-color: #eee;">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="ht-theme-info bg-contain bg-pos-r h-100 dark-bg text-white" data-bg-img="images/bg/02.pn">
+						<div class="footer-logo">
+							<a href="index.html">
+              <img class="img-fluid" src="images/new-logo.png" alt="">
+              </a>
+						</div>
+						<p class="mb-3" style="color: black;font-family: 'Poppins';text-align: justify;">The company is also affianced in enterprise application software which is backed by advanced analytics technologies and artificial intelligence helping businesses of all sizes gives the power to adapt business models and processes quickly so you can reduce costs, sharpen forecasts, and innovate more.</p> <a class="btn-simple" href="about-us.html"><span style="color: black;">Read More <i class="fas fa-long-arrow-alt-right"></i></span></a>
+						<div class="social-icons social-border circle social-hover mt-5">
+							<h4 class="title" style="color: black;">Follow Us</h4>
+							<ul class="list-inline">
+								<!-- <li class="social-facebook"><a href="#"><i class="fab fa-facebook-f"></i></a>
+								</li> -->
+								<!-- <li class="social-twitter"><a href="#"><i class="fab fa-twitter"></i></a>
+								</li>
+								<li class="social-gplus"><a href="#"><i class="fab fa-google-plus-g"></i></a>
+								</li> -->
+								<li class="social-linkedin" ><a target="_blank" href="https://www.linkedin.com/company/iconnect-tel/mycompany/" style="background-color: #BA0100;"><i class="fab fa-linkedin-in"></i></a>
+								</li>
+								<!-- <li class="social-skype"><a href="#"><i class="fab fa-skype"></i></a>
+								</li> -->
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-8 py-8 px-5">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 footer-list">
+							<h4 class="title">Useful Links</h4>
+							<div class="row">
+								<div class="col-sm-5">
+									<ul class="list-unstyled">
+                    <li><a href="index.html">Home</a>
+										</li>
+										<li><a href="about-us.html">Company</a>
+										</li>
+										<li><a href="service-2.html">Service</a>
+										</li>
+										<li><a href="product.html">Products</a>
+										</li>
+                 
+										
+									</ul>
+								</div>
+								<div class="col-sm-7">
+									<ul class="list-unstyled">
+                    <li><a href="news.html">News & Events</a>
+										</li>
+                    <li><a href="voice&sms.html">Voice & Sms</a>
+										</li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a>
+										</li>
+									</ul> 
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6 mt-5 mt-md-0">
+							<h4 class="title">Contact us</h4>
+							<ul class="media-icon list-unstyled">
+								<li>
+									<p class="mb-0">Level 3, Skylona Building, Sheikh Zayed Bin Sultan Rd, near GigaMall, Islamabad, 44000</p>
+								</li>
+								<li><a href="mailto:themeht23@gmail.com">iconnectglobal@gmail.com
+                </a>
+								</li>
+								<li><a href="tel:+912345678900">+339 529 753 27</a>
+								</li>
+								<!-- <li><a href="tel:+912345678900">+91-234-567-8900</a> -->
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row mt-5">
+						<div class="col-lg-10 col-md-12 me-auto">
+							<div class="align-items-center white-bg box-shadow px-3 py-3 radius d-md-flex justify-content-between">
+								<h4 class="mb-0">NewsLetter</h4>
+								<div class="subscribe-form sm-mt-2">
+									<form id="mc-form" class="group">
+										<input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required="">
+										<input class="btn btn-theme" type="submit" name="subscribe" value="Submit">
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="secondary-footer">
+		<div class="container">
+			<div class="copyright">
+				<div class="row align-items-center">
+					<div class="col-md-6"> <span>Copyright 2022 | All Rights Reserved</span>
+					</div>
+					<div class="col-md-6 text-md-end sm-mt-2"> <span>Design by<a href="#">  Iconnect</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<!--footer end-->
+
+
+</div>
+
+<!--== theme -->
+<script src="js/theme.js"></script>
+
+<!--== magnific-popup -->
+<script src="js/magnific-popup/jquery.magnific-popup.min.js"></script> 
+
+<!--== owl-carousel -->
+<script src="js/owl-carousel/owl.carousel.min.js"></script> 
+
+<!--== counter -->
+<script src="js/counter/counter.js"></script> 
+
+<!--== countdown -->
+<script src="js/countdown/jquery.countdown.min.js"></script> 
+
+<!--== isotope -->
+<script src="js/isotope/isotope.pkgd.min.js"></script> 
+
+<!--== mouse-parallax -->
+<script src="js/mouse-parallax/tweenmax.min.js"></script>
+<script src="js/mouse-parallax/jquery-parallax.js"></script> 
+
+<!--== wow -->
+<script src="js/wow.min.js"></script>
+
+<!--== theme-script -->
+
+
+
+<!--== owl-carousel -->
+
+<!-- inject js end -->
+
+
+</body>
+</html>
